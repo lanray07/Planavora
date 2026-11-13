@@ -1,7 +1,8 @@
 """Amazon receipt verifier WSGI entry point.
 
 Deploy behind HTTPS with request rate limiting. Set AMAZON_RVS_SECRET only on the server.
-Use store live mode by default. Use AMAZON_RVS_SANDBOX=1 only in a separate QA deployment.
+Use store live mode by default. For a separate QA deployment, set either
+AMAZON_RVS_SANDBOX=1 for App Tester or AMAZON_RVS_LAT=1 for Live App Testing.
 """
 import json
 import os
@@ -20,7 +21,11 @@ class NoRedirect(HTTPRedirectHandler):
 
 def verify(user, receipt):
     secret = os.environ["AMAZON_RVS_SECRET"]
-    prefix = "/sandbox" if os.environ.get("AMAZON_RVS_SANDBOX") == "1" else ""
+    sandbox = os.environ.get("AMAZON_RVS_SANDBOX") == "1"
+    lat = os.environ.get("AMAZON_RVS_LAT") == "1"
+    if not secret.strip() or (sandbox and lat):
+        raise ValueError("Invalid Amazon RVS configuration")
+    prefix = "/sandbox" if sandbox else ""
     values = [quote(value, safe="") for value in (secret, user, receipt)]
     url = f"{BASE}{prefix}/version/1.0/verifyReceiptId/developer/{values[0]}/user/{values[1]}/receiptId/{values[2]}"
     try:
@@ -30,9 +35,15 @@ def verify(user, receipt):
         if error.code in (400, 410):
             return False
         raise
-    return (result.get("productId") == SKU and result.get("productType") == "ENTITLED"
-            and result.get("cancelDate") is None and result.get("receiptId") == receipt
-            and (prefix or result.get("testTransaction") is False))
+    if (result.get("productId") != SKU or result.get("productType") != "ENTITLED"
+            or "cancelDate" not in result or result["cancelDate"] is not None
+            or result.get("receiptId") != receipt):
+        return False
+    if sandbox:
+        return result.get("betaProduct") is False and result.get("testTransaction") is True
+    if lat:
+        return result.get("betaProduct") is True and result.get("testTransaction") is True
+    return result.get("betaProduct") is False and result.get("testTransaction") is False
 
 
 def application(environ, start_response):
