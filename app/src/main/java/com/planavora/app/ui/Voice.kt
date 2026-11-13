@@ -103,7 +103,8 @@ fun VoicePage(event: EventRow, details: EventDetails, rows: List<Item>, money: M
         }
     }
     fun interpret() {
-        val value = transcript.trim().trimEnd('?', '.', '!', '؟', '。')
+        fun commandText(text: String) = text.trim().trimEnd { it in "?!¿¡.؟。！？" }.trimEnd()
+        val value = commandText(transcript)
         val normalized = value.lowercase(locale)
         val totals = budget(details, rows)
         val number = NumberFormat.getIntegerInstance(locale)
@@ -113,22 +114,22 @@ fun VoicePage(event: EventRow, details: EventDetails, rows: List<Item>, money: M
         val task = addTask.firstOrNull { normalized.startsWith(it.lowercase(locale) + " ") }
         val expense = addExpense.firstOrNull { normalized.startsWith(it.lowercase(locale) + " ") }
         when {
-            balance.any { normalized == it.lowercase(locale) } -> say(context.getString(R.string.choice_value, context.getString(R.string.remaining), money.display(totals.remaining)))
-            rsvp.any { normalized == it.lowercase(locale) } -> {
+            balance.any { normalized == commandText(it).lowercase(locale) } -> say(context.getString(R.string.choice_value, context.getString(R.string.remaining), money.display(totals.remaining)))
+            rsvp.any { normalized == commandText(it).lowercase(locale) } -> {
                 destination = Section.GUEST
                 val waiting = rows.count { (it.detail as? Details.Guest)?.let { g -> g.invited && g.rsvp in listOf(Rsvp.PENDING, Rsvp.MAYBE) } == true }
                 say(context.getString(R.string.choice_value, context.getString(R.string.pending_rsvps), number.format(waiting)))
             }
-            tasks.any { normalized == it.lowercase(locale) } -> {
+            tasks.any { normalized == commandText(it).lowercase(locale) } -> {
                 destination = Section.TASK
                 say(context.getString(R.string.choice_value, context.getString(R.string.outstanding_tasks),
                     number.format(rows.count { (it.detail as? Details.Task)?.complete == false })))
             }
-            payments.any { normalized == it.lowercase(locale) } -> {
+            payments.any { normalized == commandText(it).lowercase(locale) } -> {
                 destination = Section.PAYMENT
                 say(context.getString(R.string.choice_value, context.getString(R.string.vendor_balance), money.display(totals.vendorBalance)))
             }
-            start.any { normalized == it.lowercase(locale) } -> {
+            start.any { normalized == commandText(it).lowercase(locale) } -> {
                 val time = localTime(details.time, locale)
                 say(if (time.isBlank()) context.getString(R.string.no_event_time) else time)
             }

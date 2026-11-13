@@ -1,0 +1,15 @@
+{
+  "size": [2560, 1600],
+  "screenshot_size": [2300, 1310],
+  "screenshot_top": 236,
+  "colors": {
+    "background": "#F5EFE8",
+    "headline": "#493A58",
+    "caption": "#534955",
+    "outline": "#DDD0DD"
+  },
+  "fonts": {
+    "default": ["georgia.ttf", "segoeui.ttf"],
+    "ja": ["YuGothB.ttc", "YuGothM.ttc"]
+  }
+}
