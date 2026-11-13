@@ -19,3 +19,15 @@ App Tester purchase and restore passed on the Fire HD 10 with a locally authored
 For Live App Testing, create `planavora.premium` as an Entitlement and choose **Submit to Test**. Download Planavora's `AppstoreAuthenticationKey.pem` from **Upload Your App File → Additional information → View public key** and package it under `app/src/main/assets/`. Add the Amazon account used on the Fire test device as a tester in the restricted test track. [Amazon LAT setup](https://developer.amazon.com/apps-and-games/blogs/2025/10/how-to-choose-the-right-tool-for-IAP-testing) · [Appstore public key](https://developer.amazon.com/docs/appstore-sdk/appstore-sdk-troubleshooting.html)
 
 Deploy `scripts.receipt_verifier:application` behind HTTPS with the real Amazon shared key stored as `AMAZON_RVS_SECRET`. Use a separate deployment for the restricted test, set `AMAZON_RVS_LAT=1`, and point the test APK to its URL via `-PplanavoraReceiptEndpoint`. This mode calls Amazon's production RVS and accepts test receipts for the beta entitlement. The customer-facing verifier leaves both test-mode flags unset and accepts production receipts only. Run `python -m unittest scripts.test_receipt_verifier -v` to check the receipt acceptance rules locally. [Amazon RVS environments](https://developer.amazon.com/docs/in-app-purchasing/iap-testing-overview.html)
+
+The Cloudflare Workers implementation lives in `hosting/receipt-verifier`. Use the Free plan and authenticate Wrangler in a local terminal with `npx wrangler login`. Run the following from the repository root after confirming the intended account with `npx wrangler whoami`.
+
+```powershell
+$config = 'hosting/receipt-verifier/wrangler.jsonc'
+npx wrangler deploy --config $config --env lat
+npx wrangler secret put AMAZON_RVS_SECRET --config $config --env lat
+npx wrangler deploy --config $config
+npx wrangler secret put AMAZON_RVS_SECRET --config $config
+```
+
+Paste the shared key from Amazon's Shared Key page directly into each secret prompt. Both Workers return HTTP 503 for well-formed verification requests until the secret is present. Use the restricted test Worker's HTTPS URL ending in `/amazon` for the LAT build. Use the production Worker's HTTPS URL ending in `/amazon` for the eventual store build. Verify the deployed URLs reject malformed requests and verify purchase and restore on the Amazon-distributed test APK before marking LAT as passed. [Cloudflare Workers Free](https://developers.cloudflare.com/workers/platform/pricing/) · [Cloudflare Worker secrets](https://developers.cloudflare.com/workers/configuration/secrets/)

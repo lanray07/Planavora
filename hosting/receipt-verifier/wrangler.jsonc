@@ -1,0 +1,15 @@
+{
+  "name": "planavora-receipt-verifier",
+  "main": "worker.mjs",
+  "compatibility_date": "2026-11-13",
+  "workers_dev": true,
+  "preview_urls": false,
+  "env": {
+    "lat": {
+      "name": "planavora-receipt-verifier-lat",
+      "workers_dev": true,
+      "preview_urls": false,
+      "vars": { "AMAZON_RVS_LAT": "1" }
+    }
+  }
+}
