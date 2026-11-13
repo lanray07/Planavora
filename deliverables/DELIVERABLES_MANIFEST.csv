@@ -1,5 +1,6 @@
 file,bytes,sha256,git_tracked
 android/build-logs/fire-instrumentation.log,6500,9bf428fb3432e2085dbcefd97a0006dd55b69bf4d43605bb2a15adc1498fb917,no
+android/build-logs/fire-store-tests.log,1348,1b370c53fd95ea63ad39cb74f43042f87d43ef89d85643278807a69b5e0776fb,no
 android/build-logs/gradle-final.log,7095,4a11c34dde9a3bd28cd116bd184ea61e014a185f94a81b1c11820d17b1f55cb5,no
 android/build-logs/gradle.log,376028,f32a15adb301dbfd23ad99557d29b4621b411ba8001d17ac91da08a4f8767605,no
 android/debug/Planavora-0.1.0-debug.apk,30411409,483d443a5de7fbad0a7db07e3badc893224fec1839fcd358ba729dd1c994d44a,no
