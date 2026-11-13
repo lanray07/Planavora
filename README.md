@@ -11,7 +11,7 @@ Use JDK 17, Android SDK platform 36 and Android build tools 35.0.0. Configure th
 adb install -r app/build/outputs/apk/debug/app-debug.apk
 ```
 
-The release task produces an unsigned APK. Sign it with the app's authorised release keystore and verify it with apksigner before any store testing. Keep the keystore and its credentials outside the repository. See [submission preparation](deliverables/reports/submission.md).
+The release task produces an unsigned APK. Amazon applies its own signature in the standard Appstore upload flow. For local tests that require a developer-signed build, sign with the registered keystore and verify with apksigner. See [submission preparation](deliverables/reports/submission.md).
 
 ## Architecture
 

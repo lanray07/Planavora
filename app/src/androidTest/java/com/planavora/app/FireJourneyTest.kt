@@ -56,6 +56,34 @@ class FireJourneyTest {
         }
     }
 
+    @Test fun arabicDeadlineKeepsDateAndEnglishTitleTogetherInTheButton() {
+        instrumentation.runOnMainSync { AppCompatDelegate.setApplicationLocales(LocaleListCompat.forLanguageTags("ar")) }
+        seed()
+        val title = "Print place cards"
+        val due = runBlocking {
+            val id = app.store.dao.activeEvents().single().id
+            (app.store.dao.items(id).first { it.title == title }.item().detail as Details.Task).due
+        }
+        ActivityScenario.launch(MainActivity::class.java).use { activity ->
+            lateinit var date: String
+            lateinit var dashboard: String
+            activity.onActivity {
+                val locale = it.resources.configuration.locales[0]
+                assertEquals("ar", locale.language)
+                date = com.planavora.app.ui.localDate(due, locale)
+                dashboard = it.getString(R.string.command_centre)
+            }
+            waitFor(dashboard)
+            val name = compose.onNodeWithText(title, useUnmergedTree = true)
+            val deadline = compose.onNodeWithText(date, useUnmergedTree = true)
+            name.assertExists()
+            deadline.assertExists()
+            assertTrue(name.getUnclippedBoundsInRoot().bottom <= deadline.getUnclippedBoundsInRoot().top)
+            compose.onNode(hasClickAction() and hasText(title) and hasText(date)).performClick()
+            waitFor(title)
+        }
+    }
+
     @Test fun capturesEightRealScreens() {
         val locale = InstrumentationRegistry.getArguments().getString("captureLocale") ?: "en-GB"
         instrumentation.runOnMainSync { AppCompatDelegate.setApplicationLocales(LocaleListCompat.forLanguageTags(locale)) }

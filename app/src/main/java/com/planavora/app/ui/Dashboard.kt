@@ -14,10 +14,12 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.asImageBitmap
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.platform.LocalContext
+import androidx.compose.ui.platform.LocalLayoutDirection
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource as s
 import androidx.compose.ui.res.pluralStringResource
 import androidx.compose.ui.text.style.TextOverflow
+import androidx.compose.ui.unit.LayoutDirection
 import androidx.compose.ui.unit.dp
 import com.planavora.app.R
 import com.planavora.app.data.EventRow
@@ -124,7 +126,15 @@ fun Dashboard(event: EventRow, details: EventDetails, items: List<Item>, money: 
                 if (deadlines.isEmpty()) Text(s(R.string.no_deadlines))
                 deadlines.take(6).forEach { (entry, date) ->
                     OutlinedButton(onClick = { navigate(entry.section) }) {
-                        Text(s(R.string.choice_value, entry.title, localDate(date.toString(), locale)), maxLines = 2, overflow = TextOverflow.Ellipsis)
+                        val formattedDate = localDate(date.toString(), locale)
+                        if (LocalLayoutDirection.current == LayoutDirection.Rtl) {
+                            Column {
+                                Text(entry.title, maxLines = 2, overflow = TextOverflow.Ellipsis)
+                                Text(formattedDate)
+                            }
+                        } else {
+                            Text(s(R.string.choice_value, entry.title, formattedDate), maxLines = 2, overflow = TextOverflow.Ellipsis)
+                        }
                     }
                 }
             }
