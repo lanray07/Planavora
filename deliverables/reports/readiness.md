@@ -15,11 +15,12 @@ Assessment date: 13 November 2026. Overall status: **BLOCKED**.
 | Localisation structure | PASS | 19 locale resources passed coverage and placeholder validation. |
 | Arabic dashboard deadline layout | PASS | Fire HD 10 regression test confirmed that the English task title appears above the intact localised date and the deadline opens the task list. |
 | Broader localisation quality | NOT TESTED | Some visible translations need editorial correction. Native-language review and broader layout and accessibility testing remain pending. |
-| Amazon purchasing | BLOCKED | SDK, pricing, restore and receipt verification code are present. The Planavora tester JSON, a deployed verifier and purchase testing are pending. |
+| Amazon App Tester sandbox | PASS | Fire HD 10 loaded the test price, unlocked Premium after receipt verification and restored the entitlement with an empty local Premium cache. Dismissing the purchase left Premium locked and displayed the generic purchase error. |
+| Amazon production purchase testing | BLOCKED | Developer Console entitlement setup, the Appstore public key, production receipt verification and Live App Testing remain pending. |
 | Planning assistant | NOT TESTED | The app generates editable offline checklist drafts from event type and date, detects duplicate task names, and shows summaries and an invitation draft. Optional remote AI remains unimplemented. |
 | Privacy design | NOT TESTED | Android app-private storage, explicit report sharing, restricted file grants and no account requirement. The privacy draft requires owner approval and retention details. Airtight export and attachment lifecycle auditing remains pending. |
 | Original assets | PASS | Adaptive and monochrome icon sources, store icons, invitation-suite artwork and a promotional image are present. Additional category artwork remains pending. |
-| Submission | BLOCKED | Confirmation of the signing route, Amazon validation, approved translations and screenshot copy, phone variants, privacy disclosures and clearance of the product name remain pending. |
+| Submission | BLOCKED | Amazon validation with standard Amazon signing, approved translations and screenshot copy, phone variants, privacy disclosures and clearance of the product name remain pending. |
 
 ## Known functional gaps
 
