@@ -43,16 +43,27 @@ export default {
     const parts = [secret, receipt.userId, receipt.receiptId].map(encodeURIComponent);
     const url = `https://appstore-sdk.amazon.com/version/1.0/verifyReceiptId/developer/${parts[0]}/user/${parts[1]}/receiptId/${parts[2]}`;
     try {
-      const response = await fetch(url, { redirect: "error", signal: AbortSignal.timeout(8000) });
+      const controller = new AbortController();
+      const timer = setTimeout(() => controller.abort(), 8000);
+      let response;
+      try {
+        response = await fetch(url, { redirect: "manual", signal: controller.signal });
+      } finally {
+        clearTimeout(timer);
+      }
       if ([400, 410, 497].includes(response.status)) return reply(200);
-      if (!response.ok) return reply(503);
+      if (!response.ok) {
+        console.warn("Amazon RVS returned HTTP", response.status);
+        return reply(503);
+      }
       const result = await response.json();
       const lat = env.AMAZON_RVS_LAT === "1";
       const valid = result.productId === sku && result.productType === "ENTITLED"
         && result.receiptId === receipt.receiptId && result.cancelDate === null
         && result.betaProduct === lat && result.testTransaction === lat;
       return reply(200, valid);
-    } catch {
+    } catch (error) {
+      console.warn("Amazon RVS request or response failed", error instanceof TypeError ? "TypeError" : "OtherError");
       return reply(503);
     }
   },

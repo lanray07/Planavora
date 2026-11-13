@@ -25,7 +25,7 @@ test("only grants the matching entitlement for the selected receipt environment"
       upstream.mock.mockImplementation(async (url, options) => {
         assert.equal(new URL(url).hostname, "appstore-sdk.amazon.com");
         assert.match(url, /\/user\/test%2Fuser\/receiptId\/receipt$/);
-        assert.equal(options.redirect, "error");
+        assert.equal(options.redirect, "manual");
         return Response.json({ ...result, ...fields });
       });
       const response = await worker.fetch(request(JSON.stringify(receipt)), {
