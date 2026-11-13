@@ -1,0 +1,55 @@
+{
+  "display_title": "Planavora – Evenementenplanner en budgettracker",
+  "short_description": "Plan uw evenement, houd het budget bij en beheer de gastenlijst vanaf één offline evenementdashboard.",
+  "long_description": "Planavora brengt partychecklists, gastenlijsten, RSVP-tracking en evenementkosten samen in het Event Command Center. Bekijk geplande en daadwerkelijke uitgaven, registreer stortingen, volg leveranciersafspraken en ontdek aanstaande deadlines. Gebruik de startvolgorde om te zien wat er die dag gebeurt. Maak een evenement op uw apparaat zonder account, voeg bonnen en documenten toe en bekijk rapporten op basis van uw opgeslagen gegevens. Typ een planningsopdracht of gebruik de microfoon als uw apparaat een compatibele herkenningsservice heeft.",
+  "keywords": "evenementenplanner, partyplanner, evenementenbudgettracker, planningchecklist, gastenlijst, RSVP-tracker, verjaardagsorganisator, weddingplanner, leveranciersbetalingen, zitplan, aftellen van evenementen, offline evenementenplanner",
+  "release_notes": "Eerste release met evenementenplanning, budgettracking, gastenbeheer en een lokaal evenementendashboard.",
+  "support_copy": "Ga voor hulp naar de ondersteuningspagina van Planavora. Laat privé-evenementinformatie buiten openbare rapporten.",
+  "feature_bullets": [
+    "Bekijk uw budget, gasten en deadlines in het Event Command Center.",
+    "Houd geplande kosten, werkelijke uitgaven en leverancierssaldi bij.",
+    "Beheer gastenlijsten en RSVP-statussen handmatig.",
+    "Bewaar checklists, documenten en schema's voor evenementendagen op uw apparaat.",
+    "Gebruik getypte opdrachten en compatibele apparaatspraakservices."
+  ],
+  "screenshot_copy": [
+    {
+      "headline": "Alles-in-één evenementenplanner",
+      "caption": "Lees uw evenement in één oogopslag."
+    },
+    {
+      "headline": "Evenementbudget en onkostentracker",
+      "caption": "Vergelijk geplande en werkelijke kosten."
+    },
+    {
+      "headline": "Gastenlijsten en RSVP-tracking",
+      "caption": "Bekijk welke gasten hebben gereageerd."
+    },
+    {
+      "headline": "Offline planningsassistent",
+      "caption": "Bekijk een checklist die is afgestemd op uw evenementtype."
+    },
+    {
+      "headline": "Gesproken en getypte planningsopdrachten",
+      "caption": "Controleer een opdracht voordat u deze gebruikt."
+    },
+    {
+      "headline": "Offertes en betalingen van leveranciers",
+      "caption": "Bewaar offertes en saldi op één plek."
+    },
+    {
+      "headline": "Aftellen van evenementen en tijdlijn",
+      "caption": "Kijk wat er op de dag gebeurt."
+    },
+    {
+      "headline": "Offline gebeurtenisrapporten",
+      "caption": "Bekijk een voorbeeld van rapporten uit uw opgeslagen records."
+    }
+  ],
+  "support_url": "https://github.com/lanray07/Planavora/blob/main/SUPPORT.md",
+  "privacy_url": "https://github.com/lanray07/Planavora/blob/main/PRIVACY.md",
+  "developer_website": "https://github.com/lanray07/Planavora",
+  "listing_locale": "nl-NL",
+  "app_locale": "nl-NL",
+  "review": "Draft pending human review"
+}

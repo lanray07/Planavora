@@ -1,0 +1,28 @@
+<manifest xmlns:android="http://schemas.android.com/apk/res/android">
+    <uses-permission android:name="android.permission.RECORD_AUDIO"/>
+    <uses-permission android:name="android.permission.POST_NOTIFICATIONS"/>
+    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-feature android:name="android.hardware.microphone" android:required="false"/>
+    <queries>
+        <package android:name="com.amazon.sdktestclient"/>
+        <package android:name="com.amazon.venezia"/>
+        <intent><action android:name="android.speech.RecognitionService"/></intent>
+        <intent><action android:name="android.intent.action.TTS_SERVICE"/></intent>
+    </queries>
+    <application android:name=".PlanavoraApplication" android:label="@string/app_name"
+        android:icon="@mipmap/ic_launcher" android:allowBackup="false" android:usesCleartextTraffic="false"
+        android:supportsRtl="true" android:theme="@style/AppTheme">
+        <receiver android:name="com.amazon.device.iap.ResponseReceiver" android:exported="true"
+            android:permission="com.amazon.inapp.purchasing.Permission.NOTIFY">
+            <intent-filter><action android:name="com.amazon.inapp.purchasing.NOTIFY"/></intent-filter>
+        </receiver>
+        <provider android:name="androidx.core.content.FileProvider" android:authorities="com.planavora.app.attachments" android:exported="false" android:grantUriPermissions="true"><meta-data android:name="android.support.FILE_PROVIDER_PATHS" android:resource="@xml/file_paths"/></provider>
+        <activity android:name=".MainActivity" android:exported="true" android:windowSoftInputMode="adjustResize">
+            <intent-filter><action android:name="android.intent.action.MAIN"/><category android:name="android.intent.category.LAUNCHER"/></intent-filter>
+            <meta-data android:name="autoStoreLocales" android:value="true"/>
+        </activity>
+        <service android:name="androidx.appcompat.app.AppLocalesMetadataHolderService" android:enabled="false" android:exported="false">
+            <meta-data android:name="autoStoreLocales" android:value="true"/>
+        </service>
+    </application>
+</manifest>

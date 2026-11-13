@@ -1,0 +1,55 @@
+{
+  "display_title": "Planavora – Pianificatore di eventi e monitoraggio del budget",
+  "short_description": "Pianifica il tuo evento, monitora il budget e gestisci l'elenco degli invitati da una dashboard dell'evento offline.",
+  "long_description": "Planavora riunisce le liste di controllo delle feste, le liste degli invitati, il monitoraggio delle RSVP e le spese degli eventi nell'Event Command Center. Visualizza le spese pianificate ed effettive, registra i depositi, tieni traccia degli accordi con i fornitori e individua le scadenze imminenti. Utilizza l'ordine di marcia per vedere cosa succede quel giorno. Crea un evento sul tuo dispositivo senza un account, allega ricevute e documenti e visualizza in anteprima i report in base ai record salvati. Digita un comando di pianificazione o utilizza il microfono se il tuo dispositivo dispone di un servizio di riconoscimento compatibile.",
+  "keywords": "organizzatore di eventi, organizzatore di feste, monitoraggio del budget dell'evento, lista di controllo della pianificazione, elenco degli invitati, monitoraggio RSVP, organizzatore di compleanni, pianificatore di matrimoni, pagamenti dei fornitori, mappa dei posti a sedere, conto alla rovescia per eventi, organizzatore di eventi offline",
+  "release_notes": "Versione iniziale con pianificazione degli eventi, monitoraggio del budget, gestione degli ospiti e dashboard degli eventi locali.",
+  "support_copy": "Per assistenza, visita la pagina di supporto di Planavora. Si prega di lasciare le informazioni sull'evento privato fuori dai rapporti pubblici.",
+  "feature_bullets": [
+    "Controlla il tuo budget, gli ospiti e le scadenze nell'Event Command Center.",
+    "Tieni traccia dei costi pianificati, delle spese effettive e dei saldi dei fornitori.",
+    "Gestisci manualmente gli elenchi degli invitati e gli stati RSVP.",
+    "Conserva liste di controllo, documenti e programmi dei giorni degli eventi sul tuo dispositivo.",
+    "Utilizza comandi digitati e servizi vocali dei dispositivi compatibili."
+  ],
+  "screenshot_copy": [
+    {
+      "headline": "Organizzatore di eventi tutto in uno",
+      "caption": "Leggi il tuo evento a colpo d'occhio."
+    },
+    {
+      "headline": "Budget dell'evento e monitoraggio delle spese",
+      "caption": "Confrontare i costi pianificati ed effettivi."
+    },
+    {
+      "headline": "Elenchi degli ospiti e monitoraggio degli RSVP",
+      "caption": "Guarda quali ospiti hanno risposto."
+    },
+    {
+      "headline": "Assistente di pianificazione offline",
+      "caption": "Esamina una lista di controllo su misura per il tuo tipo di evento."
+    },
+    {
+      "headline": "Comandi di pianificazione vocali e digitati",
+      "caption": "Esaminare un comando prima di utilizzarlo."
+    },
+    {
+      "headline": "Preventivi e pagamenti dei fornitori",
+      "caption": "Conserva quotazioni e saldi in un unico posto."
+    },
+    {
+      "headline": "Conto alla rovescia e cronologia degli eventi",
+      "caption": "Guarda cosa succede quel giorno."
+    },
+    {
+      "headline": "Rapporti sugli eventi offline",
+      "caption": "Anteprima dei report dai record salvati."
+    }
+  ],
+  "support_url": "https://github.com/lanray07/Planavora/blob/main/SUPPORT.md",
+  "privacy_url": "https://github.com/lanray07/Planavora/blob/main/PRIVACY.md",
+  "developer_website": "https://github.com/lanray07/Planavora",
+  "listing_locale": "it-IT",
+  "app_locale": "it-IT",
+  "review": "Draft pending human review"
+}

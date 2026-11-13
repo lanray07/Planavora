@@ -1,0 +1,55 @@
+{
+  "display_title": "Planavora – Event Planner & Budget Tracker",
+  "short_description": "Planera ditt evenemang, spåra dess budget och hantera gästlistan från en offlinehändelsepanel.",
+  "long_description": "Planavora samlar partychecklistor, gästlistor, RSVP-spårning och eventutgifter i Event Command Center. Se planerade och faktiska utgifter, registrera insättningar, spåra leverantörsarrangemang och se kommande deadlines. Använd körordningen för att se vad som händer under dagen. Skapa en händelse på din enhet utan konto, bifoga kvitton och dokument och förhandsgranska rapporter baserat på dina sparade poster. Skriv ett planeringskommando eller använd mikrofonen om din enhet har en kompatibel igenkänningstjänst.",
+  "keywords": "evenemangsplanerare, festplanerare, evenemangsbudgetspårare, planeringschecklista, gästlista, RSVP-spårare, födelsedagsarrangör, bröllopsplanerare, leverantörsbetalningar, platsplan, händelsenedräkning, offlinehändelseplanerare",
+  "release_notes": "Initial release med evenemangsplanering, budgetspårning, gästhantering och en lokal evenemangspanel.",
+  "support_copy": "För hjälp, besök Planavoras supportsida. Vänligen lämna privat händelseinformation från offentliga rapporter.",
+  "feature_bullets": [
+    "Se din budget, gäster och deadlines i Event Command Center.",
+    "Spåra planerade kostnader, faktiska utgifter och leverantörssaldon.",
+    "Hantera gästlistor och OSA-statusar för hand.",
+    "Håll checklistor, dokument och scheman för evenemangsdagar på din enhet.",
+    "Använd maskinskrivna kommandon och kompatibla enhetstaltjänster."
+  ],
+  "screenshot_copy": [
+    {
+      "headline": "Allt-i-ett evenemangsplanerare",
+      "caption": "Läs ditt evenemang med ett ögonkast."
+    },
+    {
+      "headline": "Eventbudget och utgiftsspårare",
+      "caption": "Jämför planerade och faktiska kostnader."
+    },
+    {
+      "headline": "Gästlistor och OSA-spårning",
+      "caption": "Se vilka gäster som har svarat."
+    },
+    {
+      "headline": "Offline planeringsassistent",
+      "caption": "Granska en checklista som är skräddarsydd för din händelsetyp."
+    },
+    {
+      "headline": "Röst och maskinskrivna planeringskommandon",
+      "caption": "Granska ett kommando innan du använder det."
+    },
+    {
+      "headline": "Leverantörsofferter och betalningar",
+      "caption": "Håll citat och saldon på ett ställe."
+    },
+    {
+      "headline": "Händelsenedräkning och tidslinje",
+      "caption": "Se vad som händer under dagen."
+    },
+    {
+      "headline": "Offlinehändelserapporter",
+      "caption": "Förhandsgranska rapporter från dina sparade poster."
+    }
+  ],
+  "support_url": "https://github.com/lanray07/Planavora/blob/main/SUPPORT.md",
+  "privacy_url": "https://github.com/lanray07/Planavora/blob/main/PRIVACY.md",
+  "developer_website": "https://github.com/lanray07/Planavora",
+  "listing_locale": "sv-SE",
+  "app_locale": "sv-SE",
+  "review": "Draft pending human review"
+}

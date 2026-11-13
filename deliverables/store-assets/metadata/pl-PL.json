@@ -1,0 +1,55 @@
+{
+  "display_title": "Planavora – Planista wydarzeń i narzędzie do śledzenia budżetu",
+  "short_description": "Zaplanuj swoje wydarzenie, śledź jego budżet i zarządzaj listą gości z jednego panelu wydarzeń offline.",
+  "long_description": "Planavora łączy listy kontrolne przyjęć, listy gości, śledzenie odpowiedzi i wydatki na wydarzenia w Centrum dowodzenia wydarzeniami. Zobacz planowane i rzeczywiste wydatki, rejestruj depozyty, śledź ustalenia z dostawcami i identyfikuj nadchodzące terminy. Użyj kolejności działania, aby zobaczyć, co stanie się danego dnia. Utwórz wydarzenie na swoim urządzeniu bez konta, dołącz rachunki i dokumenty oraz przeglądaj raporty na podstawie zapisanych rekordów. Wpisz polecenie planowania lub użyj mikrofonu, jeśli Twoje urządzenie ma kompatybilną usługę rozpoznawania.",
+  "keywords": "planista wydarzeń, planista przyjęć, narzędzie do śledzenia budżetu wydarzenia, lista kontrolna planowania, lista gości, moduł śledzenia RSVP, organizator urodzin, organizator wesel, płatności dla dostawców, plan miejsc, odliczanie wydarzeń, planowanie wydarzeń offline",
+  "release_notes": "Pierwsza wersja z planowaniem wydarzeń, śledzeniem budżetu, zarządzaniem gośćmi i lokalnym panelem wydarzeń.",
+  "support_copy": "Aby uzyskać pomoc, odwiedź stronę pomocy technicznej Planavora. Informacje o wydarzeniach prywatnych nie należy umieszczać w raportach publicznych.",
+  "feature_bullets": [
+    "Zobacz swój budżet, gości i terminy w Centrum dowodzenia wydarzeniami.",
+    "Śledź planowane koszty, rzeczywiste wydatki i salda dostawców.",
+    "Zarządzaj ręcznie listami gości i statusami odpowiedzi.",
+    "Przechowuj listy kontrolne, dokumenty i harmonogramy wydarzeń na swoim urządzeniu.",
+    "Używaj poleceń wpisywanych i usług mowy zgodnych z urządzeniem."
+  ],
+  "screenshot_copy": [
+    {
+      "headline": "Kompleksowy planer wydarzeń",
+      "caption": "Przeczytaj w skrócie swoje wydarzenie."
+    },
+    {
+      "headline": "Śledzenie budżetu i wydatków wydarzeń",
+      "caption": "Porównaj koszty planowane i rzeczywiste."
+    },
+    {
+      "headline": "Listy gości i śledzenie odpowiedzi",
+      "caption": "Zobacz, którzy goście odpowiedzieli."
+    },
+    {
+      "headline": "Asystent planowania offline",
+      "caption": "Przejrzyj listę kontrolną dostosowaną do rodzaju wydarzenia."
+    },
+    {
+      "headline": "Polecenia planowania głosowe i pisane na klawiaturze",
+      "caption": "Przejrzyj polecenie przed jego użyciem."
+    },
+    {
+      "headline": "Oferty dostawców i płatności",
+      "caption": "Przechowuj notowania i salda w jednym miejscu."
+    },
+    {
+      "headline": "Odliczanie wydarzeń i oś czasu",
+      "caption": "Zobacz, co wydarzy się danego dnia."
+    },
+    {
+      "headline": "Raporty z wydarzeń offline",
+      "caption": "Podgląd raportów z zapisanych rekordów."
+    }
+  ],
+  "support_url": "https://github.com/lanray07/Planavora/blob/main/SUPPORT.md",
+  "privacy_url": "https://github.com/lanray07/Planavora/blob/main/PRIVACY.md",
+  "developer_website": "https://github.com/lanray07/Planavora",
+  "listing_locale": "pl-PL",
+  "app_locale": "pl-PL",
+  "review": "Draft pending human review"
+}

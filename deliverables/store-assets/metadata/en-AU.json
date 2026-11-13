@@ -1,0 +1,55 @@
+{
+  "display_title": "Planavora – Event Planner & Budget Tracker",
+  "short_description": "Plan your event, track its budget and manage the guest list from one offline event dashboard.",
+  "long_description": "Planavora brings party checklists, guest lists, RSVP tracking and event expenses together in the Event Command Centre. See planned and actual spending, record deposits, track vendor arrangements and spot upcoming deadlines. Use the running order to see what happens on the day. Create an event on your device without an account, attach receipts and documents, and preview reports based on your saved records. Type a planning command or use the microphone if your device has a compatible recognition service.",
+  "keywords": "event planner, party planner, event budget tracker, planning checklist, guest list, RSVP tracker, birthday organiser, wedding planner, vendor payments, seating plan, event countdown, offline event planner",
+  "release_notes": "Initial release with event planning, budget tracking, guest management and a local event dashboard.",
+  "support_copy": "For help, visit the Planavora support page. Please leave private event information out of public reports.",
+  "feature_bullets": [
+    "See your budget, guests and deadlines in the Event Command Centre.",
+    "Track planned costs, actual spending and vendor balances.",
+    "Manage guest lists and RSVP statuses by hand.",
+    "Keep checklists, documents and event-day schedules on your device.",
+    "Use typed commands and compatible device speech services."
+  ],
+  "screenshot_copy": [
+    {
+      "headline": "All-in-one event planner",
+      "caption": "Read your event at a glance."
+    },
+    {
+      "headline": "Event budget and expense tracker",
+      "caption": "Compare planned and actual costs."
+    },
+    {
+      "headline": "Guest lists and RSVP tracking",
+      "caption": "See which guests have replied."
+    },
+    {
+      "headline": "Offline planning assistant",
+      "caption": "Review a checklist tailored to your event type."
+    },
+    {
+      "headline": "Voice and typed planning commands",
+      "caption": "Review a command before using it."
+    },
+    {
+      "headline": "Vendor quotes and payments",
+      "caption": "Keep quotes and balances in one place."
+    },
+    {
+      "headline": "Event countdown and timeline",
+      "caption": "See what happens on the day."
+    },
+    {
+      "headline": "Offline event reports",
+      "caption": "Preview reports from your saved records."
+    }
+  ],
+  "support_url": "https://github.com/lanray07/Planavora/blob/main/SUPPORT.md",
+  "privacy_url": "https://github.com/lanray07/Planavora/blob/main/PRIVACY.md",
+  "developer_website": "https://github.com/lanray07/Planavora",
+  "listing_locale": "en-AU",
+  "app_locale": "en-AU",
+  "review": "Draft pending human review"
+}

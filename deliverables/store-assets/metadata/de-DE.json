@@ -1,0 +1,55 @@
+{
+  "display_title": "Planavora – Veranstaltungsplaner und Budget-Tracker",
+  "short_description": "Planen Sie Ihre Veranstaltung, verfolgen Sie ihr Budget und verwalten Sie die Gästeliste über ein Offline-Event-Dashboard.",
+  "long_description": "Planavora vereint Party-Checklisten, Gästelisten, RSVP-Tracking und Veranstaltungskosten im Event Command Center. Sehen Sie sich geplante und tatsächliche Ausgaben an, erfassen Sie Einzahlungen, verfolgen Sie Lieferantenvereinbarungen und erkennen Sie bevorstehende Fristen. Verwenden Sie die laufende Reihenfolge, um zu sehen, was an dem Tag passiert. Erstellen Sie ohne Konto eine Veranstaltung auf Ihrem Gerät, hängen Sie Quittungen und Dokumente an und zeigen Sie Berichte basierend auf Ihren gespeicherten Aufzeichnungen in der Vorschau an. Geben Sie einen Planungsbefehl ein oder verwenden Sie das Mikrofon, wenn Ihr Gerät über einen kompatiblen Erkennungsdienst verfügt.",
+  "keywords": "Veranstaltungsplaner, Partyplaner, Event-Budget-Tracker, Planungscheckliste, Gästeliste, RSVP-Tracker, Geburtstagsorganisator, Hochzeitsplaner, Lieferantenzahlungen, Sitzplan, Event-Countdown, Offline-Eventplaner",
+  "release_notes": "Erstveröffentlichung mit Eventplanung, Budgetverfolgung, Gästemanagement und einem lokalen Event-Dashboard.",
+  "support_copy": "Wenn Sie Hilfe benötigen, besuchen Sie die Planavora-Supportseite. Bitte lassen Sie private Veranstaltungsinformationen aus öffentlichen Berichten heraus.",
+  "feature_bullets": [
+    "Sehen Sie sich Ihr Budget, Ihre Gäste und Fristen im Event Command Center an.",
+    "Verfolgen Sie geplante Kosten, tatsächliche Ausgaben und Lieferantensalden.",
+    "Verwalten Sie Gästelisten und RSVP-Status manuell.",
+    "Behalten Sie Checklisten, Dokumente und Terminpläne für Veranstaltungstage auf Ihrem Gerät.",
+    "Verwenden Sie eingegebene Befehle und kompatible Sprachdienste des Geräts."
+  ],
+  "screenshot_copy": [
+    {
+      "headline": "All-in-one-Eventplaner",
+      "caption": "Lesen Sie Ihre Veranstaltung auf einen Blick."
+    },
+    {
+      "headline": "Event-Budget- und Ausgaben-Tracker",
+      "caption": "Vergleichen Sie geplante und tatsächliche Kosten."
+    },
+    {
+      "headline": "Gästelisten und RSVP-Tracking",
+      "caption": "Sehen Sie, welche Gäste geantwortet haben."
+    },
+    {
+      "headline": "Offline-Planungsassistent",
+      "caption": "Sehen Sie sich eine Checkliste an, die auf Ihren Veranstaltungstyp zugeschnitten ist."
+    },
+    {
+      "headline": "Sprach- und getippte Planungsbefehle",
+      "caption": "Überprüfen Sie einen Befehl, bevor Sie ihn verwenden."
+    },
+    {
+      "headline": "Lieferantenangebote und Zahlungen",
+      "caption": "Bewahren Sie Angebote und Salden an einem Ort auf."
+    },
+    {
+      "headline": "Countdown und Zeitleiste des Ereignisses",
+      "caption": "Sehen Sie, was an diesem Tag passiert."
+    },
+    {
+      "headline": "Offline-Ereignisberichte",
+      "caption": "Sehen Sie sich Berichte aus Ihren gespeicherten Datensätzen in der Vorschau an."
+    }
+  ],
+  "support_url": "https://github.com/lanray07/Planavora/blob/main/SUPPORT.md",
+  "privacy_url": "https://github.com/lanray07/Planavora/blob/main/PRIVACY.md",
+  "developer_website": "https://github.com/lanray07/Planavora",
+  "listing_locale": "de-DE",
+  "app_locale": "de-DE",
+  "review": "Draft pending human review"
+}

@@ -1,0 +1,55 @@
+{
+  "display_title": "Planavora – Planificateur d'événements et suivi du budget",
+  "short_description": "Planifiez votre événement, suivez son budget et gérez la liste des invités à partir d'un seul tableau de bord d'événement hors ligne.",
+  "long_description": "Planavora rassemble les listes de contrôle des fêtes, les listes d'invités, le suivi RSVP et les dépenses liées à l'événement dans le centre de commande de l'événement. Consultez les dépenses prévues et réelles, enregistrez les dépôts, suivez les arrangements avec les fournisseurs et repérez les échéances à venir. Utilisez l'ordre de passage pour voir ce qui se passe ce jour-là. Créez un événement sur votre appareil sans compte, joignez des reçus et des documents et prévisualisez les rapports en fonction de vos enregistrements enregistrés. Tapez une commande de planification ou utilisez le microphone si votre appareil dispose d'un service de reconnaissance compatible.",
+  "keywords": "planificateur d'événements, organisateur de fêtes, suivi du budget de l'événement, liste de contrôle de planification, liste des invités, suivi RSVP, organisateur d'anniversaire, organisateur de mariage, paiements des fournisseurs, plan de salle, compte à rebours de l'événement, planificateur d'événements hors ligne",
+  "release_notes": "Version initiale avec planification d'événements, suivi du budget, gestion des invités et tableau de bord des événements locaux.",
+  "support_copy": "Pour obtenir de l'aide, visitez la page d'assistance de Planavora. Veuillez laisser les informations sur les événements privés en dehors des rapports publics.",
+  "feature_bullets": [
+    "Consultez votre budget, vos invités et vos délais dans le centre de commande des événements.",
+    "Suivez les coûts prévus, les dépenses réelles et les soldes des fournisseurs.",
+    "Gérez manuellement les listes d’invités et les statuts RSVP.",
+    "Conservez les listes de contrôle, les documents et les calendriers des jours d'événements sur votre appareil.",
+    "Utilisez des commandes saisies et des services vocaux d’appareils compatibles."
+  ],
+  "screenshot_copy": [
+    {
+      "headline": "Planificateur d'événements tout-en-un",
+      "caption": "Lisez votre événement en un coup d'œil."
+    },
+    {
+      "headline": "Suivi du budget et des dépenses de l'événement",
+      "caption": "Comparez les coûts prévus et réels."
+    },
+    {
+      "headline": "Listes d'invités et suivi RSVP",
+      "caption": "Découvrez quels invités ont répondu."
+    },
+    {
+      "headline": "Assistant de planification hors ligne",
+      "caption": "Passez en revue une liste de contrôle adaptée à votre type d’événement."
+    },
+    {
+      "headline": "Commandes de planification vocales et tapées",
+      "caption": "Passez en revue une commande avant de l’utiliser."
+    },
+    {
+      "headline": "Devis et paiements des fournisseurs",
+      "caption": "Conservez les devis et les soldes au même endroit."
+    },
+    {
+      "headline": "Compte à rebours et chronologie de l'événement",
+      "caption": "Voyez ce qui se passe ce jour-là."
+    },
+    {
+      "headline": "Rapports d'événements hors ligne",
+      "caption": "Prévisualisez les rapports de vos enregistrements enregistrés."
+    }
+  ],
+  "support_url": "https://github.com/lanray07/Planavora/blob/main/SUPPORT.md",
+  "privacy_url": "https://github.com/lanray07/Planavora/blob/main/PRIVACY.md",
+  "developer_website": "https://github.com/lanray07/Planavora",
+  "listing_locale": "fr-FR",
+  "app_locale": "fr-FR",
+  "review": "Draft pending human review"
+}

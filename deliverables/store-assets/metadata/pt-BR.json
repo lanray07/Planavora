@@ -1,0 +1,55 @@
+{
+  "display_title": "Planavora – Planejador de eventos e rastreador de orçamento",
+  "short_description": "Planeje seu evento, acompanhe seu orçamento e gerencie a lista de convidados em um painel de eventos offline.",
+  "long_description": "O Planavora reúne checklists de festas, listas de convidados, rastreamento de confirmação de presença e despesas de eventos no Centro de Comando de Eventos. Veja gastos planejados e reais, registre depósitos, acompanhe acordos com fornecedores e identifique prazos futuros. Use a ordem de execução para ver o que acontece no dia. Crie um evento no seu dispositivo sem uma conta, anexe recibos e documentos e visualize relatórios com base nos registros salvos. Digite um comando de planejamento ou use o microfone se o seu dispositivo tiver um serviço de reconhecimento compatível.",
+  "keywords": "planejador de eventos, planejador de festas, rastreador de orçamento de eventos, lista de verificação de planejamento, lista de convidados, rastreador de RSVP, organizador de aniversários, planejador de casamentos, pagamentos de fornecedores, plano de assentos, contagem regressiva de eventos, planejador de eventos offline",
+  "release_notes": "Lançamento inicial com planejamento de eventos, controle de orçamento, gerenciamento de convidados e painel de eventos locais.",
+  "support_copy": "Para obter ajuda, visite a página de suporte do Planavora. Por favor, deixe informações privadas sobre eventos fora dos relatórios públicos.",
+  "feature_bullets": [
+    "Consulte seu orçamento, convidados e prazos no Centro de Comando de Eventos.",
+    "Acompanhe os custos planejados, os gastos reais e os saldos dos fornecedores.",
+    "Gerencie listas de convidados e status de confirmação de presença manualmente.",
+    "Mantenha listas de verificação, documentos e programações de dias de eventos no seu dispositivo.",
+    "Use comandos digitados e serviços de fala de dispositivos compatíveis."
+  ],
+  "screenshot_copy": [
+    {
+      "headline": "Planejador de eventos tudo-em-um",
+      "caption": "Leia rapidamente o seu evento."
+    },
+    {
+      "headline": "Orçamento de eventos e rastreador de despesas",
+      "caption": "Compare os custos planejados e reais."
+    },
+    {
+      "headline": "Listas de convidados e rastreamento de RSVP",
+      "caption": "Veja quais convidados responderam."
+    },
+    {
+      "headline": "Assistente de planejamento off-line",
+      "caption": "Revise uma lista de verificação adaptada ao seu tipo de evento."
+    },
+    {
+      "headline": "Comandos de planejamento por voz e digitados",
+      "caption": "Revise um comando antes de usá-lo."
+    },
+    {
+      "headline": "Cotações e pagamentos de fornecedores",
+      "caption": "Mantenha cotações e saldos em um só lugar."
+    },
+    {
+      "headline": "Contagem regressiva e cronograma do evento",
+      "caption": "Veja o que acontece no dia."
+    },
+    {
+      "headline": "Relatórios de eventos off-line",
+      "caption": "Visualize relatórios de seus registros salvos."
+    }
+  ],
+  "support_url": "https://github.com/lanray07/Planavora/blob/main/SUPPORT.md",
+  "privacy_url": "https://github.com/lanray07/Planavora/blob/main/PRIVACY.md",
+  "developer_website": "https://github.com/lanray07/Planavora",
+  "listing_locale": "pt-BR",
+  "app_locale": "pt-BR",
+  "review": "Draft pending human review"
+}

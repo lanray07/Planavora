@@ -1,0 +1,55 @@
+{
+  "display_title": "Planavora – Planificador de eventos y seguimiento de presupuestos",
+  "short_description": "Planifique su evento, realice un seguimiento de su presupuesto y administre la lista de invitados desde un panel de eventos fuera de línea.",
+  "long_description": "Planavora reúne listas de verificación de fiestas, listas de invitados, seguimiento de confirmación de asistencia y gastos de eventos en el Centro de comando de eventos. Vea los gastos planificados y reales, registre los depósitos, realice un seguimiento de los acuerdos con los proveedores y detecte los próximos plazos. Utilice el orden de ejecución para ver qué sucede ese día. Cree un evento en su dispositivo sin una cuenta, adjunte recibos y documentos, y obtenga una vista previa de informes basados ​​en sus registros guardados. Escriba un comando de planificación o use el micrófono si su dispositivo tiene un servicio de reconocimiento compatible.",
+  "keywords": "planificador de eventos, planificador de fiestas, rastreador de presupuesto de eventos, lista de verificación de planificación, lista de invitados, rastreador de confirmación de asistencia, organizador de cumpleaños, planificador de bodas, pagos a proveedores, plan de asientos, cuenta regresiva de eventos, planificador de eventos fuera de línea",
+  "release_notes": "Lanzamiento inicial con planificación de eventos, seguimiento de presupuesto, gestión de invitados y un panel de eventos local.",
+  "support_copy": "Para obtener ayuda, visite la página de soporte de Planavora. Por favor, deje la información de eventos privados fuera de los informes públicos.",
+  "feature_bullets": [
+    "Vea su presupuesto, invitados y plazos en el Centro de comando de eventos.",
+    "Realice un seguimiento de los costos planificados, los gastos reales y los saldos de los proveedores.",
+    "Administre listas de invitados y estados de confirmación de asistencia manualmente.",
+    "Mantenga listas de verificación, documentos y horarios de eventos en su dispositivo.",
+    "Utilice comandos escritos y servicios de voz de dispositivos compatibles."
+  ],
+  "screenshot_copy": [
+    {
+      "headline": "Planificador de eventos todo en uno",
+      "caption": "Lea su evento de un vistazo."
+    },
+    {
+      "headline": "Seguimiento de gastos y presupuesto de eventos",
+      "caption": "Compare los costos planificados y reales."
+    },
+    {
+      "headline": "Listas de invitados y seguimiento de confirmación de asistencia",
+      "caption": "Vea qué invitados han respondido."
+    },
+    {
+      "headline": "Asistente de planificación fuera de línea",
+      "caption": "Revise una lista de verificación adaptada a su tipo de evento."
+    },
+    {
+      "headline": "Comandos de planificación escritos y por voz",
+      "caption": "Revise un comando antes de usarlo."
+    },
+    {
+      "headline": "Cotizaciones y pagos de proveedores",
+      "caption": "Mantenga cotizaciones y saldos en un solo lugar."
+    },
+    {
+      "headline": "Cuenta regresiva y cronograma del evento",
+      "caption": "Mira lo que pasa ese día."
+    },
+    {
+      "headline": "Informes de eventos sin conexión",
+      "caption": "Obtenga una vista previa de los informes de sus registros guardados."
+    }
+  ],
+  "support_url": "https://github.com/lanray07/Planavora/blob/main/SUPPORT.md",
+  "privacy_url": "https://github.com/lanray07/Planavora/blob/main/PRIVACY.md",
+  "developer_website": "https://github.com/lanray07/Planavora",
+  "listing_locale": "es-MX",
+  "app_locale": "es-419",
+  "review": "Draft pending human review"
+}
