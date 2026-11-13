@@ -25,4 +25,6 @@ Run `python scripts/localize.py` to verify language coverage and placeholders. T
 
 Run `python scripts/capture.py --adb <path-to-adb> --locale en-GB` after installing the debug and instrumentation APKs. The test uses fictional records and clears Planavora's data on the selected test device. Do not run it against a production installation.
 
+Compose the store cards with `python scripts/compose_store.py` and verify them with `python scripts/validate_store.py`. Editable layout settings are in scripts/store_layout.json. The localized headlines and captions are in deliverables/store-assets/metadata.
+
 [Privacy](PRIVACY.md) · [Support](SUPPORT.md)
