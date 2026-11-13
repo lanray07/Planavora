@@ -132,6 +132,26 @@ class FireJourneyTest {
         }
     }
 
+    @Test fun koreanAndChineseLoadTheirOwnResources() {
+        val originalLocales = AppCompatDelegate.getApplicationLocales()
+        try {
+            val labels = mapOf("ko" to "설정", "zh-Hans" to "设置", "zh-Hant" to "設定")
+            for ((tag, settings) in labels) {
+                instrumentation.runOnMainSync {
+                    AppCompatDelegate.setApplicationLocales(LocaleListCompat.forLanguageTags(tag))
+                }
+                ActivityScenario.launch(MainActivity::class.java).use { activity ->
+                    activity.onActivity {
+                        assertEquals(tag, it.resources.configuration.locales[0].toLanguageTag())
+                        assertEquals(settings, it.getString(R.string.settings))
+                    }
+                }
+            }
+        } finally {
+            instrumentation.runOnMainSync { AppCompatDelegate.setApplicationLocales(originalLocales) }
+        }
+    }
+
     private fun seed() = runBlocking {
         val store = app.store
         store.dao.deleteAll()

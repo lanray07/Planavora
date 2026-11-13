@@ -37,7 +37,7 @@ fun LanguageChoice() {
     val configuration = LocalConfiguration.current
     val current = remember(configuration) { AppCompatDelegate.getApplicationLocales().toLanguageTags() }
     val tags = listOf("", "en-GB", "en-US", "en-AU", "fr-FR", "fr-CA", "es-ES", "es-419", "de-DE", "it-IT",
-        "pt-BR", "pt-PT", "nl-NL", "pl-PL", "sv-SE", "ja-JP", "hi-IN", "ar", "tr-TR", "id-ID")
+        "pt-BR", "pt-PT", "nl-NL", "pl-PL", "sv-SE", "ja-JP", "ko", "zh-Hans", "zh-Hant", "hi-IN", "ar", "tr-TR", "id-ID")
     Choice(s(R.string.language), current, tags, {
         if (it.isBlank()) context.getString(R.string.device_default)
         else Locale.forLanguageTag(it).let { locale -> locale.getDisplayName(locale) }

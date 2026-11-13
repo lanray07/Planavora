@@ -19,16 +19,30 @@ LOCALES = {
     "en-GB": "en", "en-US": "en", "en-AU": "en", "es-ES": "es", "es-419": "es",
     "fr-FR": "fr", "fr-CA": "fr", "de-DE": "de", "it-IT": "it", "pt-BR": "pt",
     "pt-PT": "pt", "nl-NL": "nl", "pl-PL": "pl", "sv-SE": "sv", "ja-JP": "ja", "hi-IN": "hi",
-    "ar": "ar", "tr-TR": "tr", "id-ID": "id",
+    "ar": "ar", "tr-TR": "tr", "id-ID": "id", "ko": "ko",
+    "zh-Hans": "zh-CN", "zh-Hant": "zh-TW",
 }
 PLACEHOLDER = re.compile(r"%\d+\$[sd]")
 PLURALS = {"ar": ("zero", "one", "two", "few", "many", "other"), "pl": ("one", "few", "many", "other"),
            "fr": ("one", "many", "other"), "es": ("one", "many", "other"), "pt": ("one", "many", "other"),
-           "it": ("one", "many", "other"), "ja": ("other",), "id": ("other",)}
-DAYS = {"ar": "الأيام المتبقية: %1$s", "ja": "あと%1$s日", "pl": "Do wydarzenia pozostało: %1$s dni"}
+           "it": ("one", "many", "other"), "ja": ("other",), "id": ("other",),
+           "ko": ("other",), "zh-CN": ("other",), "zh-TW": ("other",)}
+DAYS = {"ar": "الأيام المتبقية: %1$s", "ja": "あと%1$s日", "pl": "Do wydarzenia pozostało: %1$s dni",
+        "ko": "행사까지 %1$s일", "zh-CN": "距活动还有 %1$s 天", "zh-TW": "距活動還有 %1$s 天"}
 REGIONAL = {
     "en-US": {"command_centre": "Event Command Center", "uncategorised": "Uncategorized",
               "cancelled": "Canceled", "deposit_help": "Include any paid deposit in actual spending."},
+    "ko": {"transcribing": "음성을 텍스트로 변환하는 중…", "command": "명령 또는 음성 변환 결과",
+           "review_command": "명령 확인", "voice_rsvp/0": "응답을 기다리는 초대 보기",
+           "voice_tasks/0": "남은 할 일 보기", "voice_payments/0": "미지급 업체 대금 보기",
+           "voice_start/0": "행사는 몇 시에 시작하나요"},
+    "zh-Hans": {"transcribing": "正在转写语音…", "listening": "正在聆听…",
+                "invitation_line": "诚邀您参加%1$s！", "voice_rsvp/0": "查看尚未回复的邀请",
+                "voice_payments/0": "查看尚未支付的供应商款项"},
+    "zh-Hant": {"transcribing": "正在轉錄語音…", "invitation_line": "誠摯邀請您參加%1$s！",
+                "voice_rsvp/0": "查看尚未回覆的邀請", "voice_payments/0": "查看尚未支付的廠商款項",
+                "privacy_body": "活動和附件會儲存在這部裝置上。選用的語音辨識功能會使用您安裝的語音服務。報表只會在您選擇分享目的地後傳送。",
+                "voice_privacy": "裝置的語音服務可能會在線上處理音訊。Planavora 不會儲存麥克風錄音。"},
 }
 
 def path(tag):
@@ -100,11 +114,12 @@ def translations(language, source):
         cache_file.write_text(json.dumps(cache, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
     return cache | glossary
 
-def generate():
-    targets = sorted(set(LOCALES.values()) - {"en"})
+def generate(tags):
+    targets = sorted({LOCALES[tag] for tag in tags} - {"en"})
     with ThreadPoolExecutor(max_workers=6) as pool:
         dictionaries = dict(zip(targets, pool.map(lambda lang: translations(lang, ET.parse(SOURCE).getroot()), targets)))
-    for tag, language in LOCALES.items():
+    for tag in tags:
+        language = LOCALES[tag]
         tree = ET.parse(SOURCE).getroot()
         dictionary = dictionaries.get(language, {})
         plural = tree.find("plurals")
@@ -149,7 +164,8 @@ def validate():
 if __name__ == "__main__":
     parser = argparse.ArgumentParser()
     parser.add_argument("--translate", action="store_true")
+    parser.add_argument("--locale", action="append", choices=LOCALES, help="Only regenerate these locales")
     args = parser.parse_args()
     if args.translate:
-        generate()
+        generate(args.locale or LOCALES)
     validate()
