@@ -60,7 +60,7 @@ export default {
       const lat = env.AMAZON_RVS_LAT === "1";
       const valid = result.productId === sku && result.productType === "ENTITLED"
         && result.receiptId === receipt.receiptId && result.cancelDate === null
-        && result.betaProduct === lat && result.testTransaction === lat;
+        && result.betaProduct === lat && (lat || result.testTransaction === false);
       return reply(200, valid);
     } catch (error) {
       console.warn("Amazon RVS request or response failed", error instanceof TypeError ? "TypeError" : "OtherError");

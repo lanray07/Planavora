@@ -42,7 +42,7 @@ def verify(user, receipt):
     if sandbox:
         return result.get("betaProduct") is False and result.get("testTransaction") is True
     if lat:
-        return result.get("betaProduct") is True and result.get("testTransaction") is True
+        return result.get("betaProduct") is True
     return result.get("betaProduct") is False and result.get("testTransaction") is False
 
 

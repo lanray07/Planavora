@@ -18,6 +18,7 @@ test("only grants the matching entitlement for the selected receipt environment"
     for (const fields of [
       { betaProduct: false, testTransaction: false },
       { betaProduct: true, testTransaction: true },
+      { betaProduct: true, testTransaction: false },
       { betaProduct: false, testTransaction: true },
       { betaProduct: lat, testTransaction: lat, cancelDate: 1 },
       { betaProduct: lat, testTransaction: lat, productId: "wrong" },
@@ -33,7 +34,7 @@ test("only grants the matching entitlement for the selected receipt environment"
         AMAZON_RVS_LAT: lat ? "1" : "0",
       });
       assert.equal(response.status, 200);
-      assert.equal((await response.json()).valid, fields.betaProduct === lat && fields.testTransaction === lat
+      assert.equal((await response.json()).valid, fields.betaProduct === lat && (lat || fields.testTransaction === false)
         && !fields.cancelDate && !fields.productId);
     }
   }

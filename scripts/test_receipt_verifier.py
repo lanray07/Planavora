@@ -23,20 +23,20 @@ class ReceiptVerifierTest(unittest.TestCase):
     def test_receipts_are_accepted_only_in_their_matching_environment(self):
         modes = [{}, {"AMAZON_RVS_LAT": "1"}, {"AMAZON_RVS_SANDBOX": "1"}]
         for index, mode in enumerate(modes):
-            for receipt_index, (beta, test) in enumerate([(False, False), (True, True), (False, True)]):
+            for receipt_index, (beta, test) in enumerate([(False, False), (True, True), (False, True), (True, False)]):
                 with self.subTest(mode=index, receipt=receipt_index):
                     status, valid, url = self.request(mode, {
                         "productId": "planavora.premium", "productType": "ENTITLED",
                         "receiptId": "receipt", "cancelDate": None, "betaProduct": beta, "testTransaction": test,
                     })
                     self.assertEqual("200 OK", status)
-                    self.assertEqual(index == receipt_index, valid)
+                    self.assertEqual(index == receipt_index or (index == 1 and receipt_index == 3), valid)
                     self.assertEqual(index == 2, "/sandbox/" in url)
 
     def test_live_app_testing_rejects_incomplete_and_cancelled_receipts(self):
         valid = {"productId": "planavora.premium", "productType": "ENTITLED", "receiptId": "receipt",
                  "cancelDate": None, "betaProduct": True, "testTransaction": True}
-        for change in [{"cancelDate": 1}, {"productId": "other"}, {"receiptId": "other"}, {"testTransaction": None}]:
+        for change in [{"cancelDate": 1}, {"productId": "other"}, {"receiptId": "other"}, {"betaProduct": None}]:
             with self.subTest(change=change):
                 self.assertFalse(self.request({"AMAZON_RVS_LAT": "1"}, valid | change)[1])
         del valid["cancelDate"]
