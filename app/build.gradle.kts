@@ -12,8 +12,8 @@ android {
         applicationId = "com.planavora.app"
         minSdk = 28
         targetSdk = 36
-        versionCode = 1
-        versionName = "0.1.0"
+        versionCode = 2
+        versionName = "0.1.1"
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
         val endpoint = providers.gradleProperty("planavoraReceiptEndpoint").orNull.orEmpty()
         require(endpoint.isEmpty() || Regex("https://[A-Za-z0-9./:_-]+").matches(endpoint))

@@ -88,14 +88,15 @@ fun SettingsPage(theme: String?, spoken: Boolean, onDelete: () -> Unit) {
 
 @Composable
 fun PremiumPage(billing: AmazonPremium, state: PremiumState) {
-    LaunchedEffect(Unit) { billing.load() }
+    val activity = LocalContext.current as com.planavora.app.MainActivity
+    LaunchedEffect(Unit) { activity.loadPremium() }
     Page {
         Hero(s(R.string.premium), s(R.string.premium_features))
         Panel {
             Text(s(if (state.active) R.string.premium_active else R.string.one_time))
             state.price?.let { Text(it, style = MaterialTheme.typography.headlineMedium) }
             val busy = state.status in listOf(StoreStatus.LOADING, StoreStatus.CHECKING)
-            if (!state.active) Button(enabled = state.price != null && !busy, onClick = billing::purchase) { Text(s(R.string.buy)) }
+            if (!state.active) Button(enabled = state.price != null && !busy, onClick = activity::startPremiumCheckout) { Text(s(R.string.buy)) }
             OutlinedButton(enabled = !busy, onClick = billing::restore) { Text(s(R.string.restore)) }
             val message = when (state.status) {
                 StoreStatus.LOADING, StoreStatus.CHECKING -> R.string.loading

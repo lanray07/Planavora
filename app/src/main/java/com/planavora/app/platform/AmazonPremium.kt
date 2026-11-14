@@ -23,26 +23,33 @@ class AmazonPremium(private val app: Application) : PurchasingListener {
     private var timeout: Job? = null
     private val sku = "planavora.premium"
 
-    private fun begin() {
+    private fun begin(timeoutMillis: Long) {
         state.value = state.value.copy(status = StoreStatus.LOADING)
         timeout?.cancel()
         timeout = scope.launch {
-            delay(15_000)
+            delay(timeoutMillis)
             if (state.value.status == StoreStatus.LOADING) status(StoreStatus.UNAVAILABLE)
         }
     }
 
-    fun load() = request {
-        if (!registered) {
-            PurchasingService.registerListener(app, this)
-            registered = true
+    fun load() {
+        if (state.value.status == StoreStatus.LOADING || state.value.status == StoreStatus.CHECKING) return
+        request {
+            if (!registered) {
+                PurchasingService.registerListener(app, this)
+                registered = true
+            }
+            PurchasingService.getProductData(setOf(sku))
         }
-        PurchasingService.getProductData(setOf(sku))
     }
 
+    fun canPurchase(): Boolean = !state.value.active && state.value.price != null &&
+        state.value.status !in setOf(StoreStatus.LOADING, StoreStatus.CHECKING) &&
+        BuildConfig.RECEIPT_ENDPOINT.isNotBlank()
+
     fun purchase() {
-        if (state.value.price != null && BuildConfig.RECEIPT_ENDPOINT.isNotBlank()) {
-            request { PurchasingService.purchase(sku) }
+        if (canPurchase()) {
+            request(timeoutMillis = 180_000) { PurchasingService.purchase(sku) }
         }
     }
 
@@ -55,12 +62,12 @@ class AmazonPremium(private val app: Application) : PurchasingListener {
         }
     }
 
-    private fun request(action: () -> Unit) {
+    private fun request(timeoutMillis: Long = 15_000, action: () -> Unit) {
         if (BuildConfig.RECEIPT_ENDPOINT.isBlank()) {
             status(StoreStatus.UNAVAILABLE)
             return
         }
-        begin()
+        begin(timeoutMillis)
         runCatching(action).onFailure { status(StoreStatus.UNAVAILABLE) }
     }
 
